@@ -10,6 +10,7 @@ packages = [{include = "fast_zero"}]
 python = "3.11.*"
 fastapi = "^0.104.0"
 uvicorn = "^0.23.2"
+pydantic = {extras = ["email"], version = "^2.4.2"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
@@ -40,7 +41,7 @@ lint = 'ruff . && blue --check . --diff'
 format = 'blue .  && isort .'
 run = 'uvicorn fast_zero.app:app --reload'
 pre_test = 'task lint'
-testa = 'pytest -s -x --cov=fast_zero -vv'
+test = 'pytest -s -x --cov=fast_zero -vv'
 post_test = 'coverage html'
 
 [build-system]
